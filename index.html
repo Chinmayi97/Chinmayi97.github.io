@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Profile Details</title>
+
+
+<style>
+@import url(https://fonts.googleapis.com/css?family=Muli:400,300italic,300,400italic);
+body,
+html {
+  margin: 0;
+  font-family: muli;
+  height: 100%;
+  padding: 0;
+  overflow-x:hidden;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+.container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background:white;
+}
+.panel
+{
+	background:white;
+  width: 870px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 75%;
+  position: center;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+.window {
+  background:white;
+  width: 470px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100%;
+  position: relative;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+}
+.options {
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  margin-top:25px;
+  -webkit-box-pack:justify;
+  -webkit-justify-content:space-between;
+      -ms-flex-pack:justify;
+          justify-content:space-between;
+}
+.main-content {
+  padding:50px 46px 25px 20px;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: #222;
+  width: 100%;
+  height: 100%;
+  -webkit-flex-flow: column;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+h1 {
+  letter-spacing: 0px;
+  letter-spacing: .02rem;
+  font-size: 48px;
+  font-size: 3rem;
+}
+
+h3 {
+  color: #666;
+  font-size: 19px;
+  font-size: 1.2rem;
+}
+
+.description {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.highlight-window {
+  height: relative;
+  width: 400px;
+  background: white;
+  background: url('https://assets.myntassets.com/h_640,q_90,w_480/v1/assets/images/2108822/2017/11/23/11511416617780-Roadster-Women-Maroon-Solid-Round-Neck-T-shirt-3561511416617542-1.jpg');
+  background-size: cover;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  position:relative;
+  background-position:center top;
+}
+
+.color {
+  height: 30px;
+  cursor:pointer;
+  width: 30px;
+  background: #eee;
+  border: 1px solid #eee;
+  position:relative;
+}
+.highlight-overlay {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  opacity:0;
+  filter: alpha(opacity=0);
+ background:url('https://assets.myntassets.com/h_640,q_90,w_480/v1/assets/images/2108821/2017/11/23/11511416613915-Roadster-Women-Maroon-Solid-Round-Neck-T-shirt-9221511416613732-1.jpg');
+  background-size:cover;
+  -webkit-transition:opacity .4s ease;
+          transition:opacity .4s ease;
+  background-position:center top;
+}
+.background-element {
+  background: teal;
+  position: absolute;
+  width: 100%;
+  height:23% ;
+  left:0px;
+  top:0px;
+}
+.color.overlay {
+  position:absolute;
+  z-index:10;
+  background:transparent;
+  top:-1px;
+  left:-1px;
+  -webkit-transform:translateX(45px);
+      -ms-transform:translateX(45px);
+          transform:translateX(45px);
+  border:2px solid #fff;
+  outline:2px solid #ccc;
+  -webkit-transition:-webkit-transform .3s ease;
+          transition:transform .3s ease;
+}
+.color-a {
+  background:#406E3F;
+  margin-right:14px;
+}
+
+.color-b {
+  background: #457;
+
+}
+
+.color-picker {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 77px;
+  margin-top:5px;
+  position:relative;
+}
+a {
+  text-decoration:none;
+}
+a:hover {
+  text-decoration:underline;
+  color:#666;
+}
+button {
+  background:#333;
+  border:none;
+  font-weight:400;
+  height:40px;
+  margin-top:auto;
+  margin-bottom:auto;
+  padding-left:25px;
+  padding-right:25px;
+  box-sizing:border-box;
+  color:#fff;
+  cursor:pointer;
+  -webkit-transition:all .3s ease;
+          transition:all .3s ease;
+}
+button:hover {
+  background-color:#970000;
+  -webkit-transition:all .3s ease;
+          transition:all .3s ease;
+}
+.divider {
+  width:80%;
+  height:1px;
+  background:#ddd;
+  margin-top:20px;
+  margin-bottom:20px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.color-options {
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  width:50%;
+  -webkit-flex-flow:column;
+      -ms-flex-flow:column;
+          flex-flow:column;
+}
+.stock {
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-flex-flow:column;
+      -ms-flex-flow:column;
+          flex-flow:column;
+}
+.small {
+  font-size: 11px;
+  font-size:.7rem;
+  color:#999;
+  margin-top:10px;
+}
+.align-right {
+  -webkit-align-self:flex-end;
+      -ms-flex-item-align:end;
+          align-self:flex-end;
+}
+
+.purchase-info {
+  -webkit-box-pack:justify;
+  -webkit-justify-content:space-between;
+      -ms-flex-pack:justify;
+          justify-content:space-between;
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+}
+.price {
+  clear:right;
+}
+.price1
+{
+	clear:left;
+}
+
+.selection {
+  background:#fff;
+}
+
+
+.highlight-window.mobile {
+  display:none;
+}
+.check {
+  position:absolute;
+  right:0px;
+  left:0px;
+  margin-left:auto;
+  margin-right:auto;
+  background:transparent;
+  width:0px;
+  bottom:-3px;
+  border-left:10px solid transparent;
+  border-bottom:10px solid #ccc;
+  border-right:10px solid transparent;
+  height:0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<script>
+
+function aselect()
+{
+	document.getElementById('color-overlay').style.transform = 'translateX(-0.5px)';
+  document.getElementById('highlight-overlay').style.opacity = '1';
+  document.getElementById('highlight-overlay-mobile').style.opacity = '1';
+  document.getElementById('color-name').innerHTML = "GREEN / 050";
+  document.getElementById('color-name').style.color ='#333';
+}
+
+function bselect()
+{
+  document.getElementById('color-overlay').style.transform = 'translateX(45px)';
+  document.getElementById('highlight-overlay').style.opacity = '0';
+  document.getElementById('highlight-overlay-mobile').style.opacity = '0';
+  document.getElementById('color-name').innerHTML = "BLUE / 2V5";
+  document.getElementById('color-name').style.color = '#457'
+}
+
+</script>
+
+
+<body>
+
+<div class='container'>
+  <div class='background-element' id='background-element'>
+  </div>
+  <div class='panel'>
+  <div class='highlight-window' id='product-img'><div class='highlight-overlay' id='highlight-overlay'></div></div>
+  <div class='window'>
+    <div class='main-content'>
+      <h2>Roadster Women's Striped V-Neck T-shirt.</h2>
+	  <span style="color:gray">Category: Women's Tops</span>
+  <div class='description' id='description'>
+  <details><b>Description:</b><br/>Women's striped V neck T-shirt. A mix of pure cotton an lyrca wool that helps keep the body warm and comfy</details>  
+  <ul>  
+	  <li>Material: Cotton and lyrca</li>
+	  <li>Slim fit </li> 
+	  <li> Length: 24 inches </li>
+  </ul>
+  Ratings : 4.5/5 <br/><span style="color:gray">Added on: 23 Jan '18 </div>
+      <div class='highlight-window  mobile' id='product-img'><div class='highlight-overlay' id='highlight-overlay-mobile'></div></div>
+      <div class='options'>
+        <div class='color-options'>
+          Color:
+      <div class='color-picker'>
+        <div class='color overlay' id='color-overlay'><div class='check'></div></div>
+        <div class='color color-a' id='color-a' onclick="aselect()"></div>
+        <div class='color color-b' id='color-b' onclick="bselect()"></div>
+      </div>
+                  <span class='small' style='color:#457'>COLOR: <span id='color-name'>BLUES / 2V5</span></span>
+        </div>
+    </div>
+            <div class='divider'></div>
+
+          <div class='purchase-info'>
+      <div class='price'><b>Price:<strike> Rs. 300 </strike> Rs. 250 </b><br/>
+	    <span id="timer"></span>
+		<script>
+		var countDownDate = new Date("Jan 27, 2018 15:37:25").getTime();
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+                var distance = countDownDate - now;
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                document.getElementById("timer").innerHTML = "<b>Expires in "+ days + "d " + hours + "h "+ minutes + "m " + seconds + "s </b>";
+	            document.getElementById("timer").style.color='#840A0A';
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("timer").innerHTML = "EXPIRED";
+                    }
+        }, 1000);
+</script>
+	  </div>
+            <button onclick="alert('Added to cart')">ADD TO CART</button>
+    </div>
+    </div>
+  </div>
+  </div>
+</div>
+</body>
+</html>
